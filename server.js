@@ -42,26 +42,26 @@ app.post("/api/notes", function (req, res) {
 })
 
 
-app.delete('/notes/:id', function (req, res) {
+/*app.delete('/notes/:id', function (req, res) {
     var id = req.params.id;
     app.db('notes').remove({
         id: id
     });
     return res.status(201).end();
-});
+});*/
 
 
 app.get("/notes", function (req, res) {
-    res.sendFile(path.join(__dirname, '../note-taker/public/notes.html'));
+    res.sendFile(path.join(__dirname, '/public/notes.html'));
 })
 
 app.get("*", function (req, res) {
-    res.sendFile(path.join(__dirname, '../note-taker/public/index.html'));
+    res.sendFile(path.join(__dirname, '/public/index.html'));
 })
 
-app.delete('/notes', function (req, res) {
+/*app.delete('/notes', function (req, res) {
     res.send('Got a DELETE request at /notes')
-})
+})*/
 
 app.listen(PORT, () => {
     console.log(`App listening on PORT: ${PORT}`);
